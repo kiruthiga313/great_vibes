@@ -13,6 +13,7 @@ var session = require('express-session');
 var cookieParser = require('cookie-parser');
 const passport = require('passport');
 var expressSession = require('express-session');
+const PORT = process.env.PORT || 3000
 
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -25,7 +26,7 @@ db.on('error' ,(err)=>{
 db.once('open',()=>{
     console.log('Connected to db..')
 })
-app.listen(3000,()=>{
+app.listen(PORT,()=>{
     console.log('server is running on port 3000')
 })
 
